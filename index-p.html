@@ -1,0 +1,117 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Dynamic Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1><span>Hi i'm </span> Valurouthu Umasankar</h1>
+            <p class="scroll-reveal">Frontend Developer & UI/UX Designer</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">View Projects</a>
+                <a href="#contact" class="btn hire-btn">Hire Me</a>
+            </div>
+        </div>
+        <div class="profile-container">
+            <img src="images.jpg" alt="Profile Picture">
+        </div>
+    </section>
+    
+    <!-- Objective Section -->
+    <section id="objective">
+        <div class="section-card">
+            <h3>Objective</h3>
+            <p>Passionate and results-driven Electronics and Communication Engineering student with a strong foundation in software development, web technologies, and problem-solving. Adept at building scalable and responsive web applications using HTML, CSS, JavaScript, and C++, with hands-on experience in database management and software optimization. Seeking a challenging role to leverage my technical expertise, adaptability, and analytical mindset to contribute effectively to innovative projects and enhance business solutions in a dynamic organization.</p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-card">
+            <h3>Education</h3>
+            <ul>
+                <li><strong>Sai Gnapathi Engineering College, Visakhapatnam</strong><br>B.Tech (Electronics and Communication Engineering), Passed out 2025 | CGPA: 7.2</li>
+                <li><strong>Sai Gnapathi Polytechnic College, Visakhapatnam</strong><br>Diploma (Electronics and Communication Engineering), 2022 | CGPA: 8.2</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>Berger Hut - E-Commerce Restaurant Website</h3>
+            <p>Designed and developed a fully responsive restaurant website using HTML and CSS. The project features a structured layout with sections for the menu, reservations, testimonials, and a contact form. Implemented a modern UI/UX design with a dark theme for enhanced readability. Used CSS Flexbox and Grid for a responsive and mobile-friendly layout. Optimized images and styles for faster load times and better performance.</p>
+        </div>
+        <div class="project-card">
+            <h3>Interactive Web Chatbot</h3>
+            <p>Designed and developed an interactive chatbot using HTML, CSS, and JavaScript to simulate human-like conversations. Implemented DOM manipulation and event listeners to enhance user interaction and improve responsiveness. Integrated basic AI logic and conditional statements to provide dynamic responses. Focused on user-friendly UI/UX design, ensuring smooth and engaging chatbot interactions.</p>
+        </div>
+        <div class="project-card">
+            <h3>Puppies Mart E-Commerce Website</h3>
+            <p>Developed a simple e-commerce website using HTML, CSS, and JavaScript. Designed a user-friendly interface with responsive layouts. Implemented basic JavaScript features like product listings and interactive elements. Improved website performance with optimized styling and structured code. Enhanced navigation and user experience with smooth transitions and intuitive design.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skill-cloud">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>C++</span>
+            <span>Python</span>
+            <span>DBMS</span>
+            <span>Data Structures & Algorithms basics</span>
+            <span>UI/UX Designing</span>
+            <span>basics knowledge of sql</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <script>
+        // Profile Animation
+        const profileContainer = document.querySelector('.profile-container');
+        
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            profileContainer.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // Scroll Reveal Animation
+        const scrollReveal = document.querySelectorAll('.scroll-reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        scrollReveal.forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
